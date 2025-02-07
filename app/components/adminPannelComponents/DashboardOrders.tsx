@@ -25,10 +25,14 @@ const fetchOrders = async (): Promise<Order[]> => {
 };
 
 // Function to delete an order from Sanity
-const deleteOrder = async (orderId: string, _id: string, setOrders: any) => {
+const deleteOrder = async (
+  orderId: string,
+  _id: string,
+  setOrders: React.Dispatch<React.SetStateAction<Order[]>>
+) => {
   try {
     await client.delete(_id);
-    setOrders((prevOrders: Order[]) =>
+    setOrders((prevOrders) =>
       prevOrders.filter((order) => order.orderId !== orderId)
     );
     toast.success("Order deleted successfully!");
@@ -38,11 +42,16 @@ const deleteOrder = async (orderId: string, _id: string, setOrders: any) => {
   }
 };
 
+
 // Function to update order status in Sanity
-const updateOrderStatus = async (_id: string, newStatus: string, setOrders: any) => {
+const updateOrderStatus = async (
+  _id: string,
+  newStatus: string,
+  setOrders: React.Dispatch<React.SetStateAction<Order[]>>
+) => {
   try {
     await client.patch(_id).set({ status: newStatus }).commit();
-    setOrders((prevOrders: Order[]) =>
+    setOrders((prevOrders) =>
       prevOrders.map((order) =>
         order._id === _id ? { ...order, status: newStatus } : order
       )
