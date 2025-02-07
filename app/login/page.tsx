@@ -23,7 +23,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex font-clash items-center justify-center bg-darkPrimary">
       <div className="bg-lightGray p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4 text-center text-darkPrimary border-b-2 pb-1 border-darkPrimary tracking-wide">Login <span className="text-yellow-500 rounded-lg bg-gray-950/5 p-2 mb-2">Avion Furniture</span> Admin Pannel</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center text-darkPrimary border-b-2 pb-1 border-darkPrimary tracking-wide">Login <span className="text-yellow-500 rounded-lg bg-gray-950/5 p-2 mb-2">Avion Furniture</span> Admin Panel</h2>
         <h5 className="text-lg font-bold mb-6 text-center text-red-500">Warning: This section is for Admins only! ⚠</h5>
         <form onSubmit={handleLogin} className="space-y-6">
         <div>
