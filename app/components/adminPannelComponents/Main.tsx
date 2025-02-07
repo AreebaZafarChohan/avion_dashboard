@@ -107,7 +107,7 @@ export default function Dashboard() {
       <div className="min-h-screen flex items-center justify-center bg-black">
         <div className="text-center">
           <div className="loader"></div>
-          <p className="mt-4 text-white text-lg font-semibold">
+          <p className="mt-4 text-white bg-darkPrimary text-lg font-semibold">
             Redirecting to login...
           </p>
         </div>
@@ -124,6 +124,7 @@ export default function Dashboard() {
           className="fixed inset-0 bg-darkPrimary flex justify-center font-clash items-center text-white text-3xl font-bold z-50"
         >
          Dear {username} - Welcome to Avion Admin Panel
+         <p className="mb-4">You have successfully logged in!</p>
         </motion.div>
       )}
 
