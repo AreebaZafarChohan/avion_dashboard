@@ -1,23 +1,43 @@
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display 2';
+  src: url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --bg-white: #ffffff;
   --foreground: #171717;
+  --navbar-color:#726E8D;
+  --light-gray: #F9F9F9;
+  --dark-primary: #2A254B;
+  --dark-blue: #22202E;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Satoshi, Clash Display, Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -25,3 +45,10 @@ body {
     text-wrap: balance;
   }
 }
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+  @apply box-border;
+}
+
